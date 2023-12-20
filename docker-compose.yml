@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  cypress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - CYPRESS_baseUrl=http://web:3000
+    depends_on:
+      - web
+    volumes:
+      - ./:/cypress/e2e
+    working_dir: /cypress/e2e
+    command: 'yarn run cypress'
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app
