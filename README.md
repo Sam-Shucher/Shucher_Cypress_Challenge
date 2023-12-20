@@ -1,4 +1,8 @@
 Notes 
+incase you do not have cypress already installed, change your directory to the project folder in your terminal, run the below command in the top level dir of this project
+
+--> yarn add cypress --dev
+
 
 How to run the tests
 --> yarn cypress run
