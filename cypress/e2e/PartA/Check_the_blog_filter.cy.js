@@ -25,20 +25,21 @@ describe('Checking the blog filtering', () => {
 
 
       //news and advice 
-      cy.get('.tag-label:nth-child(8)').click();
+
+      cy.get('label[for="tag_news-advice_id_1"]').click();
 
           // verify news and advice tag is enabled * i wasnt able to find a way in the dev tools to see that that button was selected, so this is my work around
-          cy.get('.reset-filters').then($el => {
+          cy.get('div.actions').contains('a', 'Clear').then($el => {
           const text = $el.text();
           expect(text).to.eq('Clear');
 
       });
 
       // verify apply filters is now active
-      cy.get('.actions > .button').should('be.enabled');
+      cy.get('input.button[value="Apply Filters"]').should('be.enabled');
 
       //apply filters / submit form
-      cy.get('.actions > .button').click();
+      cy.get('input.button[value="Apply Filters"]').click();
 
 
       //Verify redirect to the /blog
@@ -53,3 +54,4 @@ describe('Checking the blog filtering', () => {
 
   });
 });
+//*[@id="content"]/div[1]/div[2]/form/div[2]/button
