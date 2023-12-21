@@ -1,0 +1,26 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing dependencies with Yarn...
+      - yarn install
+  pre_build:
+    commands:
+      - echo Verifying Cypress installation...
+      - yarn run cypress verify
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Starting the project web server...
+      - yarn run start:ci &
+      - echo Running the Cypress tests...
+      - yarn run cypress run
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'cypress/screenshots'
