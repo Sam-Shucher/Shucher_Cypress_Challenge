@@ -20,8 +20,8 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - 'if [ "$(ls -A cypress/screenshots)" ]; then mv cypress/screenshots/* artifacts/screenshots/; fi'
 artifacts:
   files:
     - '**/*'
-  base-directory: 'cypress\screenshots'
-
+  base-directory: 'artifacts'
