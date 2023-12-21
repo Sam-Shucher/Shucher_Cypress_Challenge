@@ -23,5 +23,5 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'Uconnect/cypress/screenshots'
+  base-directory: 'cypress/screenshots'
 
