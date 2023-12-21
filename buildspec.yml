@@ -23,6 +23,5 @@ phases:
       - 'if [ "$(ls -A cypress/screenshots)" ]; then mv cypress/screenshots/* artifacts/screenshots/; fi'
 artifacts:
   files:
-    # - '**/*'
-    - 'cypress/screenshots/**/*'
+    - 'cypress/reports/mocha/mochawesome.json'
   base-directory: 'artifacts'
