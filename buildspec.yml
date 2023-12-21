@@ -23,5 +23,6 @@ phases:
       - 'if [ "$(ls -A cypress/screenshots)" ]; then mv cypress/screenshots/* artifacts/screenshots/; fi'
 artifacts:
   files:
-    - '**/*'
+    # - '**/*'
+    - 'cypress/screenshots/**/*'
   base-directory: 'artifacts'
