@@ -1,8 +1,9 @@
-Notes 
-incase you do not have cypress already installed, change your directory to the project folder in your terminal, run the below command in the top level dir of this project
+Notes
 
---> yarn add cypress --dev
+Just make sure you have yarn installed, and make sure your inside the Shucher_Cypress_Challenge directory
 
+install dependencies
+--> yarn install
 
 How to run the tests
 --> yarn cypress run
