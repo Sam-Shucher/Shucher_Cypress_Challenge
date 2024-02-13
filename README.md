@@ -3,12 +3,15 @@ Notes
 Just make sure you have yarn installed, and make sure your inside the Shucher_Cypress_Challenge directory
 
 install dependencies
+
 --> yarn install
 
 How to run the tests
+
 --> yarn cypress run
 
 how to open the interactive runner
+
 --> yarn cypress open
 
 
