@@ -18,15 +18,14 @@ describe('Checking the blog filtering', () => {
         cy.get('.actions > .button').should('be.disabled');
   
         // in this part we verify that we can get the actual options ( not just the heading options in the dropdown)  
-        cy.get('fieldset:nth-child(3) > .tag-label:nth-child(7)').should('be.visible').then($el => {
+        cy.get('label[for="stag_staff_id_1"]').should('be.visible').then($el => {
             const text = $el.text();
             expect(text).to.eq('Faculty/Staff');
         });
-  
-  
+
         //news and advice
-  
-        cy.get('label[for="tag_news-advice_id_1"]').click({force: true});
+
+        cy.get('label[for="tag_news-advice_id_1"]').click();
           
       
             cy.get('.reset-filters').eq(1).then($el => {
