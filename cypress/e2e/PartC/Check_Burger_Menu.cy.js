@@ -31,10 +31,9 @@ describe('Checking a method that gets called when we change the view port ', () 
         //inside the spy, we change the view port
         }).then( () => {
             cy.viewport(550, 750)
-            //     //wait does not fix }).wait(xamount).then( () => {
+
         }).wait(100).then( () => {
-                 //wait does not fix
-            //cy.wait(60000)
+            
             cy.viewport(200, 100)
             expect(spy).not.to.be.called
             win.uc.make_accessible()
